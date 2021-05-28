@@ -17,6 +17,7 @@ export  class InlineDialog{
     button: string
     button2: string
     callback: Function
+    id: number
 
     constructor(player: SampPlayer, style: number, caption: string, info: string, button: string, button2:string, callback: Function ){
 
@@ -27,6 +28,7 @@ export  class InlineDialog{
         button = button
         button2 = button2
         callback = callback
+        this.id = InlineDialog.lastId
 
         const dialogobj: dialogObject = {
             dialogId: InlineDialog.lastId, 
@@ -34,13 +36,14 @@ export  class InlineDialog{
         }
 
         InlineDialog.dialogCallbacks.push(dialogobj) 
+
         ShowPlayerDialog(player.playerid, InlineDialog.lastId, style, caption, info, button, button2)
         InlineDialog.lastId++
         return this
     }
 
     Show(){
-        ShowPlayerDialog(this.player.playerid, InlineDialog.lastId, this.style, this.caption, this.info, this.button, this.button2)
+        ShowPlayerDialog(this.player.playerid, this.id, this.style, this.caption, this.info, this.button, this.button2)
     }
     Hide(){
         ShowPlayerDialog(this.player.playerid, -1, 0, "", "", "", "")
