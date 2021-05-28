@@ -13,32 +13,36 @@ import{ InlineDialog }from './lib/InlineDialog'
 # How to use
 
  ```js
-OnPlayerConnect(player=>{
-    const theDialog = new InlineDialog(
-        player,
-        DIALOG_STYLE.LIST,
-        "Test",
-        "test\ntest\n2",
-        "ok", "",
-        (listitem: number, response: number, inputtext: string)=>{
-        if(response){
-            SendClientMessage(player.playerid, "rgba(255, 255, 255, 0)", "listitem " + listitem + " inputtext: "+inputtext)
-            theDialog.Show(player)
-        }
-        else
-        SendClientMessage(player.playerid, "rgba(255, 255, 255, 0)", "Thank you for clicking the dialog.")
-      
-   })
-   // somewhere later in the code
-   theDialog.Hide()
-   // oh we maybe now want to show it back
-   theDialog.Show(player)
-   return 1;
-})
+        const theDialog = new InlineDialog(
+            player,
+            DIALOG_STYLE.LIST,
+            "Test",
+            "test\ntest\n2",
+            "ok", "",
+            (listitem: number, response: number, inputtext: string)=>
+                {
+                    if(response){
+                        SendClientMessage(player.playerid, "rgba(255, 255, 255, 0)", "listitem " + listitem + " inputtext: "+inputtext)
+                        theDialog.Show(player)
+                    }
+                    else
+                        SendClientMessage(player.playerid, "rgba(255, 255, 255, 0)", "Thank you for clicking the dialog.")
+                 }
+        
+          )
+       // somewhere later in the code
+       theDialog.Hide(player)
+       // oh we maybe now want to show it back
+       theDialog.Show(player)
   ```
   
   ```js
  theDialog.Hide()
+ ```
+ # Constructor parameters
+ ```js
+ 
+ constructor(player: SampPlayer, style: number, caption: string, info: string, button: string, button2:string, callback: Function )
  ```
  
 # Have fun!
