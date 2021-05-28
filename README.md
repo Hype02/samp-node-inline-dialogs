@@ -1,6 +1,9 @@
 # samp-node-inline-dialogs
 InlineDialogs for SAMP NodeJS framework.
 
+# Requirements
+1. samp-node-lib https://github.com/peterszombati/samp-node-lib
+
 # How to install
 Clone the repo to your folder of choice, best practise is to create "lib" folder in your project, and clone this repo to it.
 After that, go to your code and add at the top of your code:
