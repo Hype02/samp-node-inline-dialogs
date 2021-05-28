@@ -13,7 +13,7 @@ import{ InlineDialog }from './lib/InlineDialog'
 # How to use
 
  ```js
-        const theDialog = new InlineDialog(
+       const theDialog = new InlineDialog(
             player,
             DIALOG_STYLE.LIST,
             "Test",
@@ -23,6 +23,10 @@ import{ InlineDialog }from './lib/InlineDialog'
                 {
                     if(response){
                         SendClientMessage(player.playerid, "rgba(255, 255, 255, 0)", "listitem " + listitem + " inputtext: "+inputtext)
+                 
+                            theDialog.caption = "you have choosen " + listitem
+
+                        
                         theDialog.Show(player)
                     }
                     else
