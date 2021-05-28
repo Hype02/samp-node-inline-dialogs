@@ -42,8 +42,8 @@ export  class InlineDialog{
         return this
     }
 
-    Show(){
-        ShowPlayerDialog(this.player.playerid, this.id, this.style, this.caption, this.info, this.button, this.button2)
+    Show(player: SampPlayer = this.player){
+        ShowPlayerDialog(player.playerid, this.id, this.style, this.caption, this.info, this.button, this.button2)
     }
     Hide(){
         ShowPlayerDialog(this.player.playerid, -1, 0, "", "", "", "")
