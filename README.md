@@ -8,7 +8,7 @@ InlineDialogs for SAMP NodeJS framework.
 Clone the repo to your folder of choice, best practise is to create "lib" folder in your project, and clone this repo to it.
 After that, go to your code and add at the top of your code:
 ```js
-import InlineDialog from './lib/InlineDialog'
+import{ InlineDialog }from './lib/InlineDialog'
 ```
 # How to use
 
