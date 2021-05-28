@@ -36,9 +36,6 @@ import{ InlineDialog }from './lib/InlineDialog'
        theDialog.Show(player)
   ```
   
-  ```js
- theDialog.Hide()
- ```
  # Constructor parameters
  ```js
  
