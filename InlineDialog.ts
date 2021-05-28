@@ -32,7 +32,7 @@ export  class InlineDialog{
 
         const dialogobj: dialogObject = {
             dialogId: InlineDialog.lastId, 
-             callback: callback
+            callback: callback
         }
 
         InlineDialog.dialogCallbacks.push(dialogobj) 
@@ -50,11 +50,11 @@ export  class InlineDialog{
     }
 }
 
-OnDialogResponse((player, dialogid, listitem, inputtext)=>{
+OnDialogResponse((player, dialogid, response, listitem, inputtext)=>{
 
    InlineDialog.dialogCallbacks.map((obj: dialogObject)=>{
        if(obj.dialogId === dialogid){
-           obj.callback(listitem, inputtext)
+           obj.callback(listitem, response, inputtext)
            InlineDialog.dialogCallbacks = InlineDialog.dialogCallbacks.filter((e: dialogObject)=>e.dialogId==dialogid)
        }
    })
