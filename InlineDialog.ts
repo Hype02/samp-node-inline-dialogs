@@ -5,9 +5,9 @@ type dialogObject = {
     callback: Function
 }
 
-export default class InlineDialog{
+export  class InlineDialog{
 
-    static dialogCallbacks = []
+    static dialogCallbacks: dialogObject[] = []
     static lastId = 0
 
     player: SampPlayer
@@ -28,10 +28,12 @@ export default class InlineDialog{
         button2 = button2
         callback = callback
 
-        InlineDialog.dialogCallbacks.push({
+        const dialogobj: dialogObject = {
             dialogId: InlineDialog.lastId, 
-            callback: callback
-        }) 
+             callback: callback
+        }
+
+        InlineDialog.dialogCallbacks.push(dialogobj) 
         ShowPlayerDialog(player.playerid, InlineDialog.lastId, style, caption, info, button, button2)
         InlineDialog.lastId++
         return this
